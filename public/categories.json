@@ -1,0 +1,38 @@
+[
+    {
+      "id": 1,
+      "category_name": "Fiction",
+      "description": "Immerse yourself in the world of imagination and creativity with compelling stories that transport you to different realms and explore the depths of human emotions.",
+      "image_url": "https://i.imgur.com/KblOKTG.jpg"
+    },
+    {
+      "id": 2,
+      "category_name": "Science Fiction",
+      "description": "Embark on adventures beyond the bounds of reality with futuristic technologies, otherworldly creatures, and mind-bending concepts that challenge the limits of human understanding.",
+      "image_url": "https://i.imgur.com/VtoPqck.jpg"
+    },
+    {
+      "id": 3,
+      "category_name": "Mystery",
+      "description": "Solve puzzles, unravel secrets, and follow intriguing plots as you delve into the mysterious and suspenseful world of detective stories and crime-solving narratives.",
+      "image_url": "https://i.imgur.com/IO6L94O.jpg"
+    },
+    {
+      "id": 4,
+      "category_name": "Non-Fiction",
+      "description": "Expand your knowledge and gain insights into real-world events, historical accounts, scientific discoveries, and personal journeys through the diverse and informative realm of non-fiction.",
+      "image_url": "https://i.imgur.com/meT6cOo.jpg"
+    },
+    {
+      "id": 5,
+      "category_name": "Self-Help",
+      "description": "Empower yourself with practical advice, strategies, and motivational insights designed to enhance personal growth, well-being, and the pursuit of a fulfilling life.",
+      "image_url": "https://i.imgur.com/zxycJYF.jpg"
+    },
+    {
+      "id": 6,
+      "category_name": "Fantasy",
+      "description": "Escape to magical worlds filled with mythical creatures, epic quests, and enchanting landscapes, as you immerse yourself in the fantastical realms of imagination and wonder.",
+      "image_url": "https://i.imgur.com/gL6ATf7.jpg"
+    }
+  ]
