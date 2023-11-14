@@ -4,21 +4,31 @@ import { AuthContext } from "../../providers/AuthProvider";
 
 
 const Login = () => {
-    const { Login } = useContext(AuthContext);
+    const { Login, SignInWithGoogle } = useContext(AuthContext);
+
     const handleLogin = event => {
         event.preventDefault();
         const form = event.target;
         const email = form.email.value;
         const password = form.password.value;
         // console.log(email, password);
-        Login(email,password)
-        .then((result) => {
-            console.log(result.user)
-        }).catch((err) => {
-            console.log(err)
-        });
-
+        Login(email, password)
+            .then((result) => {
+                console.log(result.user)
+            }).catch((err) => {
+                console.log(err)
+            });
     }
+
+    const handleGoogleLogin= () => {
+        SignInWithGoogle()
+        .then((result) => {
+            console.log(result)
+        }).catch((err) => {
+            console.error(err);
+        });
+    }
+
     return (
         <div>
             <div className="hero min-h-screen bg-base-200">
@@ -51,7 +61,7 @@ const Login = () => {
                             </form>
                             <div>
                                 <p className="text-center">or <br />
-                                    <button className="btn btn-block">Google</button>
+                                    <button onClick={handleGoogleLogin} className="btn btn-block">Google</button>
                                 </p>
                                 <p>if You do not have an account <Link className="btn btn-link" to='/register'>Register</Link></p>
                             </div>
