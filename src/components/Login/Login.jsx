@@ -1,10 +1,12 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import swal from "sweetalert";
 
 
 const Login = () => {
     const { Login, SignInWithGoogle } = useContext(AuthContext);
+    const [error, setError] = useState(''); 
 
     const handleLogin = event => {
         event.preventDefault();
@@ -14,9 +16,12 @@ const Login = () => {
         // console.log(email, password);
         Login(email, password)
             .then((result) => {
-                console.log(result.user)
+                console.log(result.user);
+                setError('');
+                swal("Good job!", "You clicked the button!", "success");
             }).catch((err) => {
                 console.log(err)
+                setError(err);
             });
     }
 
@@ -64,6 +69,9 @@ const Login = () => {
                                     <button onClick={handleGoogleLogin} className="btn btn-block">Google</button>
                                 </p>
                                 <p>if You do not have an account <Link className="btn btn-link" to='/register'>Register</Link></p>
+                                {
+                                    error && <p className="text-red-600">{error.message}</p>
+                                }
                             </div>
                         </div>
                     </div>
