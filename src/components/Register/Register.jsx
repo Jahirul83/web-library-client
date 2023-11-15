@@ -1,10 +1,12 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import swal from "sweetalert";
 
 
 const Register = () => {
-    const {  createUser } = useContext(AuthContext);
+    const { createUser } = useContext(AuthContext);
+    const [error, setError] = useState('');
 
 
     const handleRegister = event => {
@@ -13,9 +15,15 @@ const Register = () => {
         const email = form.email.value;
         const password = form.password.value;
 
-        createUser(email,password)
-        .then(result => console.log(result.user))
-        .catch(error =>console.error(error))
+        createUser(email, password)
+            .then(result => {
+                setError('');
+                console.log(result.user);
+                swal("Good job!", "You clicked the button!", "success");
+            })
+            .catch(error => {
+                setError(error)
+            })
 
     }
     return (
@@ -51,6 +59,9 @@ const Register = () => {
                             </form>
                             <div>
                                 <p>Already have an account <Link className="btn btn-link" to='/login'>Login</Link></p>
+                                {
+                                    error && <p className="text-red-600">{error.message}</p>
+                                }
                             </div>
                         </div>
                     </div>
