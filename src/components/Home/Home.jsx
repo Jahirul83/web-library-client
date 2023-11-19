@@ -11,7 +11,7 @@ const Home = () => {
             <Banner></Banner>
             <div className="grid grid-cols-2 gap-4 m-4">
                 {
-                    LoadedData.map(data => <Category
+                    LoadedData?.map(data => <Category
                         key={data.id}
                         data={data}
                     ></Category>)
