@@ -6,8 +6,8 @@ const Category = ({ data }) => {
     const { image_url, category_name, description } = data;
     return (
         <div>
-            <div className="card bg-base-100 shadow-xl image-full">
-                <figure><img className="w-72" src={image_url} alt="Shoes" /></figure>
+            <div className="card bg-base-100 shadow-xl image-full h-60">
+                <figure><img className="w-full" src={image_url} alt="Shoes" /></figure>
                 <div className="card-body">
                     <h2 className="card-title">{category_name}</h2>
                     <p>{description}</p>

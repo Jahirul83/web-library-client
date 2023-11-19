@@ -46,8 +46,8 @@ const Navbar = () => {
             <div className="navbar-end">
                 {
                     user ? <div className="flex p-2">
-                        <div className="flex justify-center items-center border-solid border-2 border-sky-500 bg-sky-700 rounded-md mr-3">
-                            <div className="mr-3 text-white pl-2">
+                        <div className="hidden md:flex justify-center items-center border-solid border-2 btn bg-slate-700 rounded-md mr-3">
+                            <div className="text-white">
                                 <p>{user?.displayName ? user.displayName : "User Name"}</p>
                             </div>
                             <div className="mr-3 ">
