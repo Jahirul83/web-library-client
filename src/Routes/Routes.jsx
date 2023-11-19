@@ -6,6 +6,7 @@ import Login from "../components/Login/Login";
 import Register from "../components/Register/Register";
 import Categories from "../components/Categories/Categories";
 import Books from "../components/Books/Books";
+import AddBook from "../components/Books/AddBook";
 
 const router = createBrowserRouter([
     {
@@ -35,6 +36,10 @@ const router = createBrowserRouter([
             path:"/books/:category_name",
             element: <Books></Books>,
             loader: ()=>fetch('http://localhost:3000/books')
+        },
+        {
+            path:"/addBook",
+            element: <AddBook></AddBook>
         },
       ],
     },
