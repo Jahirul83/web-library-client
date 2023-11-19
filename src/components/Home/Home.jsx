@@ -9,7 +9,8 @@ const Home = () => {
     return (
         <div>
             <Banner></Banner>
-            <div className="grid grid-cols-2 gap-4 m-4">
+            <h2 className="text-3xl font-semibold text-center m-6">Categories</h2>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 m-4">
                 {
                     LoadedData?.map(data => <Category
                         key={data.id}

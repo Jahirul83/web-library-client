@@ -7,11 +7,13 @@ import Register from "../components/Register/Register";
 import Categories from "../components/Categories/Categories";
 import Books from "../components/Books/Books";
 import AddBook from "../components/Books/AddBook";
+import ErrorPage from "../components/ErrorPage/ErrorPage";
 
 const router = createBrowserRouter([
     {
       path: "/",
       element:<Root></Root>,
+      errorElement:<ErrorPage></ErrorPage>,
       children: [
         {
             path:"/",
