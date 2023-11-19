@@ -11,6 +11,7 @@ import ErrorPage from "../components/ErrorPage/ErrorPage";
 import BookDetails from "../components/Books/BookDetails";
 import About from "../components/Home/About/About";
 import Contact from "../components/Home/Contact/Contact";
+import BookUpdate from "../components/Books/BookUpdate";
 
 const router = createBrowserRouter([
     {
@@ -38,14 +39,19 @@ const router = createBrowserRouter([
                 loader: () => fetch('categories.json')
             },
             {
+                path: "/books/:category_name",
+                element: <Books></Books>,
+                loader: () => fetch('http://localhost:3000/books')
+            },
+            {
                 path: "/BookDetails/:id",
                 element: <BookDetails></BookDetails>,
                 loader: ({ params }) => fetch(`http://localhost:3000/books/${params.id}`)
             },
             {
-                path: "/books/:category_name",
-                element: <Books></Books>,
-                loader: () => fetch('http://localhost:3000/books')
+                path: "/bookUpdate/:id",
+                element: <BookUpdate></BookUpdate>,
+                loader: ({ params }) => fetch(`http://localhost:3000/books/${params.id}`)
             },
             {
                 path: "/addBook",
