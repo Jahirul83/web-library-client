@@ -1,6 +1,9 @@
 import { useLoaderData } from "react-router-dom";
 import Banner from "./Banner/Banner";
 import Category from "../Categories/Category";
+import FAQ from "./FAQ/FAQ";
+import About from "./About/About";
+import Contact from "./Contact/Contact";
 // import Categories from "../Categories/Categories";
 
 
@@ -18,8 +21,13 @@ const Home = () => {
                     ></Category>)
                 }
             </div>
-            {/* <Categories></Categories> */}
+            <h2 className="text-3xl font-semibold text-center m-6">FAQ</h2>
+            <FAQ></FAQ>
+            <About></About>
+            <Contact></Contact>
         </div>
+        
+
     );
 };
 
