@@ -1,10 +1,11 @@
 import { useContext } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { AuthContext } from "../../providers/AuthProvider";
+import userDefaultPic from "../../assets/userDefaultPic.png"
 
 
 const Navbar = () => {
-    const { user,LogOut } = useContext(AuthContext);
+    const { user, LogOut } = useContext(AuthContext);
     const navItems = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/about">about</NavLink></li>
@@ -19,10 +20,10 @@ const Navbar = () => {
 
     const handleLogout = () => {
         LogOut()
-        .then(() => {   
-        }).catch((err) => {
-            console.log(err);
-        });
+            .then(() => {
+            }).catch((err) => {
+                console.log(err);
+            });
     }
     return (
         <div className="navbar bg-base-100">
@@ -44,10 +45,25 @@ const Navbar = () => {
             </div>
             <div className="navbar-end">
                 {
-                    user ? <button onClick={handleLogout} className="btn btn-secondary">Logout</button> : <Link className="btn btn-secondary" to="/login">Login</Link>
+                    user ? <div className="flex p-2">
+                        <div className="flex justify-center items-center border-solid border-2 border-sky-500 bg-sky-700 rounded-md mr-3">
+                            <div className="mr-3 text-white pl-2">
+                                <p>{user?.displayName ? user.displayName : "User Name"}</p>
+                            </div>
+                            <div className="mr-3 ">
+                                <label className="btn btn-ghost btn-circle avatar">
+                                    <div className="w-10 rounded-full">
+                                        <img src={user?.photoURL ? user.photoURL : userDefaultPic} />
+                                    </div>
+                                </label>
+                            </div>
+                        </div>
+
+                        <button onClick={handleLogout} className="btn btn-secondary">Logout</button>
+                    </div> : <Link className="btn btn-secondary" to="/login">Login</Link>
                 }
             </div>
-        </div>
+        </div >
     );
 };
 
