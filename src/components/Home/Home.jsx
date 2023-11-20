@@ -21,14 +21,20 @@ const Home = () => {
                     ></Category>)
                 }
             </div>
-            <h2 className="text-3xl font-semibold text-center m-6">FAQ</h2>
-            <FAQ></FAQ>
-            <h2 className="text-3xl font-semibold text-center m-6">About</h2>
-            <About></About>
-            <h2 className="text-3xl font-semibold text-center m-6">Contact Us</h2>
-            <Contact></Contact>
+            <div>
+                <h2 className="text-3xl font-semibold text-center m-6">FAQ</h2>
+                <FAQ></FAQ>
+            </div>
+            <div>
+                <h2 className="text-3xl font-semibold text-center m-6">About</h2>
+                <About></About>
+            </div>
+            <div>
+                <h2 className="text-3xl font-semibold text-center m-6">Contact Us</h2>
+                <Contact></Contact>
+            </div>
         </div>
-        
+
 
     );
 };

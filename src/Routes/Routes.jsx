@@ -13,7 +13,7 @@ import About from "../components/Home/About/About";
 import Contact from "../components/Home/Contact/Contact";
 import BookUpdate from "../components/Books/BookUpdate";
 import Allbooks from "../components/Books/AllBooks/Allbooks";
-import BorrowedBooks from "../components/Books/BorrowedBooks.jsx/BorrowedBooks";
+import BorrowedBooks from "../components/Books/BorrowedBooks/BorrowedBooks";
 
 const router = createBrowserRouter([
     {
@@ -70,12 +70,12 @@ const router = createBrowserRouter([
             {
                 path: "/allBooks",
                 element: <Allbooks></Allbooks>,
-                loader:()=>fetch('http://localhost:5000/books')
+                loader: () => fetch('http://localhost:5000/books')
             },
             {
                 path: "/borrowedBooks",
                 element: <BorrowedBooks></BorrowedBooks>,
-                loader:()=>fetch('http://localhost:5000/borrowBooks')
+                loader: () => fetch('http://localhost:5000/borrowBooks')
             },
         ],
     },

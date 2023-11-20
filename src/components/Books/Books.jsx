@@ -10,7 +10,7 @@ const Books = () => {
     useEffect(() => {
 
 
-        let rem = books.filter(filterData => category_name.toLowerCase() === filterData.category.toLowerCase());
+        let rem = books?.filter(filterData => category_name.toLowerCase() === filterData.category.toLowerCase());
         setRemaining(rem);
         // console.log(rem);
 
