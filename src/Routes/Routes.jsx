@@ -12,6 +12,7 @@ import BookDetails from "../components/Books/BookDetails";
 import About from "../components/Home/About/About";
 import Contact from "../components/Home/Contact/Contact";
 import BookUpdate from "../components/Books/BookUpdate";
+import Allbooks from "../components/Books/AllBooks/Allbooks";
 
 const router = createBrowserRouter([
     {
@@ -64,6 +65,11 @@ const router = createBrowserRouter([
             {
                 path: "/contacts",
                 element: <Contact></Contact>
+            },
+            {
+                path: "/allBooks",
+                element: <Allbooks></Allbooks>,
+                loader:()=>fetch('http://localhost:5000/books')
             },
         ],
     },
