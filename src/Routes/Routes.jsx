@@ -41,17 +41,17 @@ const router = createBrowserRouter([
             {
                 path: "/books/:category_name",
                 element: <Books></Books>,
-                loader: () => fetch('http://localhost:3000/books')
+                loader: () => fetch('http://localhost:5000/books')
             },
             {
                 path: "/BookDetails/:id",
                 element: <BookDetails></BookDetails>,
-                loader: ({ params }) => fetch(`http://localhost:3000/books/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/books/${params.id}`)
             },
             {
                 path: "/bookUpdate/:id",
                 element: <BookUpdate></BookUpdate>,
-                loader: ({ params }) => fetch(`http://localhost:3000/books/${params.id}`)
+                loader: ({ params }) => fetch(`http://localhost:5000/books/${params.id}`)
             },
             {
                 path: "/addBook",

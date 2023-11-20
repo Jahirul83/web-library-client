@@ -21,7 +21,7 @@ const BookUpdate = () => {
         const available = true;
         const fromInfo = { title, quantity, author, category, rating, short_description, image, available };
         console.log(fromInfo);
-        axios.patch(`http://localhost:3000/books/${_id}`, fromInfo)
+        axios.patch(`http://localhost:5000/books/${_id}`, fromInfo)
             .then((result) => {
                 console.log(result);
                 Swal.fire({
