@@ -1,6 +1,6 @@
 import axios from "axios";
 import { useLoaderData } from "react-router-dom";
-import swal from "sweetalert";
+// import swal from "sweetalert";
 import Swal from "sweetalert2";
 
 

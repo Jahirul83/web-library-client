@@ -12,7 +12,7 @@ const Navbar = () => {
         <li><NavLink to="/contacts">contacts</NavLink></li>
         {
             user && <><li><NavLink to="/addBook">Add Book </NavLink></li>
-                <li><NavLink to="/allBook"> All Books</NavLink></li>
+                <li><NavLink to="/allBooks"> All Books</NavLink></li>
                 <li><NavLink to="/borrowed">Borrowed Books</NavLink></li>
             </>
         }
