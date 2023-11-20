@@ -8,7 +8,6 @@ const Allbooks = () => {
     const [allbooks, setAllbooks] = useState(booksData);
     const [availableBooks, setAvailableBooks] = useState([]);
 
-
     useEffect(() => {
         let rem = booksData.filter(filterData => filterData.available === true)
         console.log(rem);
