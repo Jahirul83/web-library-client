@@ -16,7 +16,7 @@ const Login = () => {
         // console.log(email, password);
         Login(email, password)
             .then((result) => {
-                console.log(result.user);
+                console.log(result?.user);
                 setError('');
                 swal("Good job!", "You clicked the button!", "success");
             }).catch((err) => {
@@ -28,7 +28,8 @@ const Login = () => {
     const handleGoogleLogin= () => {
         SignInWithGoogle()
         .then((result) => {
-            console.log(result)
+            console.log(result?.user);
+            swal("Good job!", "You clicked the button!", "success");
         }).catch((err) => {
             console.error(err);
         });
