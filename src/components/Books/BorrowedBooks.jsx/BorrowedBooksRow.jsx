@@ -3,7 +3,6 @@ import PropTypes from 'prop-types';
 const BorrowedBooksRow = ({ borrow }) => {
     const { email, author, title, returnBooks } = borrow;
     return (
-        <div>
             <div className="overflow-x-auto">
                 <tr className="bg-base-200">
                     <th>{email}</th>
@@ -12,7 +11,6 @@ const BorrowedBooksRow = ({ borrow }) => {
                     <td>{returnBooks}</td>
                 </tr>
             </div>
-        </div>
     );
 };
 
