@@ -20,7 +20,7 @@ const AddBook = () => {
         // console.log(fromInfo);
 
 
-        axios.post('http://localhost:5000/books', fromInfo)
+        axios.post('https://web-library-server.vercel.app/books', fromInfo)
             .then(res => {
                 console.log(res);
             })

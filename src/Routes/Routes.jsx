@@ -44,17 +44,17 @@ const router = createBrowserRouter([
             {
                 path: "/books/:category_name",
                 element: <Books></Books>,
-                loader: () => fetch('http://localhost:5000/books')
+                loader: () => fetch('https://web-library-server.vercel.app/books')
             },
             {
                 path: "/BookDetails/:id",
                 element: <PrivateRoute><BookDetails></BookDetails></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/books/${params.id}`)
+                loader: ({ params }) => fetch(`https://web-library-server.vercel.app/books/${params.id}`)
             },
             {
                 path: "/bookUpdate/:id",
                 element: <PrivateRoute><BookUpdate></BookUpdate></PrivateRoute>,
-                loader: ({ params }) => fetch(`http://localhost:5000/books/${params.id}`)
+                loader: ({ params }) => fetch(`https://web-library-server.vercel.app/books/${params.id}`)
             },
             {
                 path: "/addBook",
@@ -71,12 +71,12 @@ const router = createBrowserRouter([
             {
                 path: "/allBooks",
                 element: <Allbooks></Allbooks>,
-                loader: () => fetch('http://localhost:5000/books')
+                loader: () => fetch('https://web-library-server.vercel.app/books')
             },
             {
                 path: "/borrowedBooks",
                 element: <PrivateRoute><BorrowedBooks></BorrowedBooks></PrivateRoute>,
-                loader: () => fetch('http://localhost:5000/borrowBooks')
+                loader: () => fetch('https://web-library-server.vercel.app/borrowBooks')
             },
         ],
     },
