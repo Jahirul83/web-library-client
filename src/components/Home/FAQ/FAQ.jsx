@@ -1,9 +1,16 @@
+import { useContext } from 'react';
 import faqPic from '../../../assets/undraw_Questions_re_1fy7.png'
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const FAQ = () => {
+    const { dark} = useContext(AuthContext);
+    const containerStyle = {
+        backgroundColor: dark ? '#333333' : '#ffffff',
+        color:'#333333',
+      };
     return (
         <div>
-            <div className="hero min-h-screen bg-base-200">
+            <div  style={containerStyle} className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row">
                     <img src={faqPic} className="max-w-sm w-1/2 md:w-full rounded-lg shadow-2xl" />
                     {/* FAQ */}

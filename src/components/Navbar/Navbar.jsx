@@ -5,7 +5,18 @@ import userDefaultPic from "../../assets/userDefaultPic.png"
 
 
 const Navbar = () => {
-    const { user, LogOut } = useContext(AuthContext);
+    const {dark, setDark, user, LogOut } = useContext(AuthContext);
+
+    const handleDark = () =>
+    {
+        setDark(!dark);
+        console.log(dark);
+    }
+    
+    const containerStyle = {
+        backgroundColor: dark ? '#333333' : '#ffffff',
+        color: dark ? '#ffffff' : '#333333',
+      };
     const navItems = <>
         <li><NavLink to="/">Home</NavLink></li>
         <li><NavLink to="/about">about</NavLink></li>
@@ -26,7 +37,7 @@ const Navbar = () => {
             });
     }
     return (
-        <div className="navbar bg-base-100">
+        <div style={containerStyle} className="navbar bg-base-100">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
@@ -36,7 +47,8 @@ const Navbar = () => {
                         {navItems}
                     </ul>
                 </div>
-                <a className="btn btn-ghost normal-case text-xl">BOOKS <span className="text-indigo-600">POINT</span></a>
+               <Link to='/'> <button className="btn btn-ghost normal-case text-xl">BOOKS <span className="text-indigo-600">POINT</span></button></Link>
+                <button onClick={handleDark} className="hidden md:flex justify-center items-center btn btn-xs btn-secondary">Dark/light</button>
             </div>
             <div className="navbar-center hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
