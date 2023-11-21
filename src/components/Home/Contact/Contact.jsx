@@ -1,9 +1,16 @@
+import { useContext } from 'react';
 import contactPic from '../../../assets/undraw_People_search_re_5rre.png'
+import { AuthContext } from '../../../providers/AuthProvider';
 
 const Contact = () => {
+    const { dark} = useContext(AuthContext);
+    const containerStyle = {
+        backgroundColor: dark ? '#333333' : '#ffffff',
+        color:'#333333',
+      };
     return (
         <div>
-            <div className="hero min-h-screen bg-base-200">
+            <div style={containerStyle} className="hero min-h-screen bg-base-200">
                 <div className="hero-content flex-col lg:flex-row-reverse">
                     <img src={contactPic} className='max-w-sm w-1/2 md:w-full' />
                     <div>
