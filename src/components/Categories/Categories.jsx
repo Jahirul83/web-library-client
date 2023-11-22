@@ -8,7 +8,7 @@ const Categories = () => {
         <div>
             {/* <h2>category:{categories.length}</h2> */}
             {
-                categories.map(category => <Category
+                categories?.map(category => <Category
                     key={category.id}
                     category={category}
                 ></Category>)
