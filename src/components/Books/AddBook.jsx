@@ -1,4 +1,5 @@
 import axios from "axios";
+import swal from "sweetalert";
 
 
 const AddBook = () => {
@@ -23,6 +24,7 @@ const AddBook = () => {
         axios.post('https://web-library-server.vercel.app/books', fromInfo)
             .then(res => {
                 console.log(res);
+                swal("Good job!", "You clicked the button!", "success");
             })
             .catch(err => {
                 console.log(err);
